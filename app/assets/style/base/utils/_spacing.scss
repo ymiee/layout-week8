@@ -1,0 +1,28 @@
+// space
+@each $key, $value in $breakpoints {
+  $infix: breakpoint-infix($key, $value);
+  @include media-generate($key, $value){
+    @each $pro in $spacies-properties {
+      @each $side in $spacies-sides {
+        @each $spaceKey, $spaceVal in $spacies {
+          .#{$pro}#{$side}#{$infix}-#{$spaceKey} {
+            @include space-generate($pro, $side, $spaceVal);
+          }
+        }
+      }
+    }
+  }
+}
+
+.ml-auto {
+  margin-left: auto !important;
+}
+
+.mr-auto {
+  margin-right: auto !important;
+}
+
+.mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}

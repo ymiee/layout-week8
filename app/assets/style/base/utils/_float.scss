@@ -1,0 +1,9 @@
+
+@each $key, $value in $breakpoints {
+  $infix: breakpoint-infix($key, $value);
+  @include media-generate($key, $value){
+    .float#{$infix}-left  { float: left !important; }
+    .float#{$infix}-right { float: right !important; }
+    .float#{$infix}-none  { float: none !important; }
+  }
+}

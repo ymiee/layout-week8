@@ -1,0 +1,25 @@
+
+@each $key, $value in $breakpoints {
+  $infix: breakpoint-infix($key, $value);
+  @include media-generate($key, $value){
+    .position#{$infix}-static {
+      position: static !important;
+    }
+
+    .position#{$infix}-relative {
+      position: relative !important;
+    }
+
+    .position#{$infix}-absolute {
+      position: absolute !important;
+    }
+
+    .position#{$infix}-fixed {
+      position: fixed !important;
+    }
+
+    .position#{$infix}-sticky {
+      position: sticky !important;
+    }
+  }
+}

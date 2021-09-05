@@ -1,0 +1,39 @@
+.navbar {
+  position: relative;
+  &__brand {
+    width: 6rem;
+    height: 2rem;
+    background: url("../images/logo.png") center no-repeat;
+    background-size: cover;
+    text-indent: 101%;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  &__link--active a {
+    color: $secondary;
+  }
+  &__collapse {
+    max-height: 0px;
+    position: absolute;
+    top: 5rem;
+    right: 0;
+    left: 0;
+    background-color: $third;
+    transition: max-height 1.5s;
+    text-align: center;
+    overflow: hidden;
+    z-index: 999;
+    &__link a {
+      width: 100%;
+      padding: 0.5rem;
+      &:hover, &:focus {
+        background: $primary;
+        color: $white;
+      }
+    }
+  }
+}
+
+.showMenu .navbar__collapse {
+  max-height: 11.625rem;
+}

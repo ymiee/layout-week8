@@ -1,0 +1,80 @@
+.btn {
+  font-family: $font-family;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  border-radius: 0.3rem;
+  transition: all 0.15s ease-in-out;
+  font-size: 1rem;
+  line-height: 1.5;
+  white-space:nowrap;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+  &:disabled, &.disabled {
+    pointer-events: none;
+  }
+}
+
+// btn colors
+@each $key, $value in $theme-colors {
+  .btn-#{$key} {
+    background-color: $value;
+    border: 1px solid $value;
+    color: $white;
+    &:hover, &:active {
+      background-color: darken($value, 15%);
+      color: $white;
+    }
+    &:focus {
+      box-shadow: 0 0 0 0.2rem rgba($value, 0.5);
+    }
+    &:disabled, &.disabled {
+      &:hover, &:active {
+        background-color: $value;
+      }
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
+  .btn-outline-#{$key} {
+    color: $value;
+    border: 1px solid $value;
+    &:hover, &:focus {
+      background-color: $value;
+      color: $white;
+    }
+    &:focus {
+      box-shadow: 0 0 0 0.2rem rgba($value, 0.5);
+    }
+  }
+}
+
+.btn-white {
+  color: $muted;
+}
+
+.btn-lg {
+  padding: 0.5rem 1rem;;
+  font-size: 1.25rem;
+}
+
+@each $key, $value in $breakpoints {
+  $infix: breakpoint-infix($key, $value);
+  @include media-generate($key, $value){
+    .btn#{$infix}-block {
+      display: block;
+    }
+
+    .btn#{$infix}-inline {
+      display: inline;
+    }
+    
+    .btn#{$infix}-inline-block {
+      display: inline-block;
+    }
+  }
+}

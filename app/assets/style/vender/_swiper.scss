@@ -1,0 +1,39 @@
+.feebackSwiper {
+  width: 100%;
+  height: 364px;
+  @include pad {
+    height: 262px;
+  }
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 7.25rem;
+  padding: 1.5rem;
+  background: $white;
+  border-radius: 1rem;
+}
+
+.swiper-button-prev, .swiper-button-next {
+  position: absolute;
+  top: auto;
+  bottom: -3rem;
+  width: auto;
+  color: $primary;
+  span {
+    font-size: 2.5rem;
+  }
+  &:after {
+    display: none;
+  }
+}
+
+.swiper-button-prev {
+  left: 15px;
+}
+
+.swiper-button-next {
+  right: 15px;
+}

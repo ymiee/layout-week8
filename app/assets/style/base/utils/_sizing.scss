@@ -1,0 +1,30 @@
+// height
+@each $key, $value in $breakpoints {
+  $infix: breakpoint-infix($key, $value);
+  @include media-generate($key, $value){
+    @each $sizingKey, $sizingVal in $sizing {
+      .h#{$infix}-#{$sizingKey} {
+        height: $sizingVal !important;
+      }
+      .w#{$infix}-#{$sizingKey} {
+        width: $sizingVal !important;
+      }
+    }
+  }
+}
+
+.vw-100 { 
+  width: 100vw !important;
+}
+
+.vh-100 { 
+  height: 100vh !important;
+}
+
+.min-vw-100 { 
+  min-width: 100vw !important;
+}
+
+.min-vh-100 { 
+  min-height: 100vh !important;
+}

@@ -1,0 +1,9 @@
+// breakpoint-infix
+
+@function breakpoint-infix($breakpointsKey, $breakpointVal) {
+  $infix: "";
+  @if $breakpointVal != 0 {
+    $infix: "-#{$breakpointsKey}"
+  }
+  @return $infix;
+}

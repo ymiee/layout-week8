@@ -1,0 +1,53 @@
+// text color
+@each $key, $value in $theme-colors {
+  .text-#{$key} {
+    color: $value !important;
+  }
+}
+
+// text decoration
+.text-decoration-none {
+  text-decoration: none !important;
+}
+
+// text align
+@each $key, $value in $breakpoints {
+  $infix: breakpoint-infix($key, $value);
+  @include media-generate($key, $value){
+    .text#{$infix}-center {
+      text-align: center !important;
+    };
+
+    .text#{$infix}-right {
+      text-align: right !important;
+    };
+
+    .text#{$infix}-left {
+      text-align: left !important;
+    };
+  }
+}
+
+// font weight
+@each $key, $value in $font-weight {
+  .fw-#{$key} {
+    font-weight: $value !important;
+  }
+}
+
+// font style
+.fst-italic {
+  font-style: italic !important;
+}
+
+// font size
+@each $key, $value in $breakpoints {
+  $infix: breakpoint-infix($key, $value);
+  @include media-generate($key, $value){
+    @each $key, $value in $font-sizes {
+      .fz#{$infix}-#{$key} {
+        font-size: $value !important;
+      }
+    }
+  }
+}
