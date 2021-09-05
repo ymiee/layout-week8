@@ -27,6 +27,10 @@
   display: flex;
   input, select {
     border-radius: 0;
+    max-width: 15rem;
+    @include mobile {
+      max-width: 100%;
+    }
   }
   .form-control {
     &:first-child {

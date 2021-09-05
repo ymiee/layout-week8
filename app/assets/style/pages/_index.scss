@@ -116,6 +116,30 @@
   background-image: url("../images/photo-9.jpg");
 }
 
+.class-img {
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.class-img1 {
+  background-image: url("../images/photo-1.jpg");
+}
+
+.class-img2 {
+  background-image: url("../images/photo-2.jpg");
+}
+
+.class-img3 {
+  background-image: url("../images/photo-3.jpg");
+}
+
+.class-img4 {
+  background-image: url("../images/plan-1.jpg");
+}
+
 .feeback-img {
   width: 3.75rem;
   height: 3.75rem;
@@ -150,4 +174,14 @@
 
 .plan-img3 {
   background-image: url("../images/plan-3.jpg");
+}
+
+.social-media {
+  display: none;
+  position: fixed;
+  top: 40%;
+  right: 1rem;
+  @include desktop-m {
+    display: block;
+  }
 }

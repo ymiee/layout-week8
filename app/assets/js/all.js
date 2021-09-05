@@ -6,27 +6,23 @@ $(document).ready(function () {
 });
 
 const classSwiper = new Swiper(".classSwiper", {
-  slidesPerView: 1,
+  slidesPerView: 2,
   grid: {
-    rows: 3,
+    rows: 2,
   },
-  spaceBetween: 8,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
+  spaceBetween: 15,
   breakpoints: {
     768: {
       slidesPerView: 2,
       grid: {
         rows: 2,
       },
-      spaceBetween: 30,
+      spaceBetween: 24,
     },
     1200: {
-      slidesPerView: 3,
+      slidesPerView: 1.2,
       grid: {
-        rows: 2,
+        rows: 1,
       },
       spaceBetween: 30,
     }

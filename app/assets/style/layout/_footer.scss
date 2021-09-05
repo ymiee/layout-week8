@@ -3,12 +3,6 @@
   a {
     color: $white;
   }
-  &__input {
-    max-width: calc(345px - 73px);
-    @include pad {
-      max-width: 278px;
-    }
-  }
 }
 
 .logo {
